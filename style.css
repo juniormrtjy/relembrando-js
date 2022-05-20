@@ -1,0 +1,162 @@
+* {
+  margin:0; padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+img {
+  max-width:500px;
+}
+
+/* ROOT */
+
+:root {
+  --hue:174;
+  --main:hsl(var(--hue) 54% 36%);
+  --medium:hsl(var(--hue) 50% 50%);
+  --light:hsl(var(--hue) 77% 78%);
+  --main-alt:hsl(var(--hue) 39% 25%);
+  --dark:hsl(0, 95%, 8%);
+  --black:hsl(0, 0%, 5%);
+  --white:white;
+  /* colors hex */
+  /* --1:hsl(174, 54%, 36%);
+  --2:hsl(174, 50%, 50%);
+  --3:#9cf2e9;
+  --4:hsl(169, 39%, 25%);
+  --5:hsl(0, 95%, 8%); */
+}
+
+/* LAYOUT */
+
+.header {
+  padding-block:1rem;
+}
+
+.content {
+  display:grid;
+  gap:1rem;
+}
+
+/* GRID COLUMNS */
+.one-column {
+  grid-template-columns: 1fr;
+}
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* PHARAGRAPH */
+.content p {
+  max-width:500px;
+  padding:.3rem;
+  background-color:var(--black);
+  color:var(--white);
+  border-radius:.2rem;
+  transition:.3s;
+}
+.content p:hover {
+  background-color:var(--dark);
+}
+/* ASIDE SPAN */
+.content aside span {
+  color:var(--main);
+}
+/* ~~ */
+
+.wrapper {
+  max-width:1000px;
+  margin-inline:auto;
+  padding-inline:1rem;
+}
+
+.divider {
+  height: 1px;
+  margin-block:1.5rem;
+  background:#ccc;
+}
+
+/* SCROLLBAR CUSTOM */
+
+/* .over::-webkit-scrollbar {
+  width:15px;
+}
+
+.over::-webkit-scrollbar-track {
+  background:var(--medium);
+}
+
+.over::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+}
+
+.over {
+  height:20rem;
+  overflow-y:auto;
+} */
+
+/* MAIN HEADER */
+
+#main-head {
+  height:12.5rem;
+  line-height: 12.5rem;
+  text-align: center;
+  background:var(--main);
+}
+#main-head h2 {
+  font-size:3rem;
+  color:var(--white);
+}
+
+/* OPERADORES COMPARATIVOS */
+
+/* #opcomp .content p {
+  max-width:500px;
+  padding:.3rem;
+  background-color:var(--black);
+  color:var(--white);
+  border-radius:.2rem;
+  transition:.3s;
+}
+#opcomp .content p:hover {
+  background-color:var(--dark);
+} */
+
+
+/* MEDIA QUERIES */
+
+@media (max-width:786px) {
+  .wrapper {
+    padding-inline:.5rem;
+  }
+  img {
+    width: 100%;
+  }
+
+  .content {
+    justify-items: center;
+  }
+  .content p {
+    width:90vw;
+  }
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:385px) {
+  #main-head {
+  width:100%;
+  line-height: 1;
+  padding-inline: 1rem;
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
+}
+  #main-head h2 {
+    font-size:2rem;
+  }
+}

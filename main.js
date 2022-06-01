@@ -1,3 +1,16 @@
+// COISAS EXTRA
+
+{
+  let menuTopo = document.querySelector('#menu-top')
+  function onScroll() {
+    if (scrollY > 200) {
+      menuTopo.classList.add('a-none')
+    } else {
+      menuTopo.classList.remove('a-none')
+    }
+  }
+}
+
 // =============== OPERADORES COMPARATIVOS
 
 var opcomp = document.querySelector('#opcomp .content aside')
@@ -64,4 +77,30 @@ opcomp.innerHTML +=
     '<p>Imprimindo a variável "maior20": ' + maior20 + '</p> <br>'
   dom.innerHTML +=
     '<p>Imprimindo a variável "menor20": ' + menor20 + '</p> <br>'
+}
+
+// =============== PARSETINT
+
+{
+  let dom = document.querySelector('#parse .content aside')
+  let num1 = '2'
+  let num2 = '5.5'
+
+  dom.innerHTML +=
+    '<p>O <span>parseInt</span> transforma strings em números inteiros. O <span>parseFloat</span> transforma as strings em números com decimais. Número 1: ' +
+    num1 +
+    ' e Número 2: ' +
+    num2 +
+    '. Usando o <span>ParseInt</span> para somar os 2: ' +
+    '<span>' +
+    (parseInt(num1) + parseFloat(num2)) +
+    '</span></p>'
+}
+
+// =============== ALERT E PROMPT
+
+{
+  let dom = document.querySelector('#alerprom .content aside')
+  dom.innerHTML +=
+    '<p>Não irei usar o prompt porque é irritante. Mas ele recebe um valor e armazena em string. Na imagem 2, mostra como usar o prompt para receber e armazenar um número da maneira correta.'
 }

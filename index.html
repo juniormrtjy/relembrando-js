@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css" />
     <title>Relembrando JS</title>
 
+    <!-- BOXICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,6 +41,22 @@
         </a>
       </button>
     </div>
+    <nav id="nav">
+      <header>
+        <div class="title">
+          <img src="Vector.png" alt="" />
+          <h2>Menu</h2>
+          <i class="bx bx-x nav-close point" onclick="closeMenu()"></i>
+        </div>
+        <i class="bx bx-chevron-up nav-up point" onclick="showMenu()"></i>
+      </header>
+      <ul class="menu">
+        <li><a href="#opcomp">Operadores Comparativos</a></li>
+        <li><a href="#oplog">Operadores Lógicos</a></li>
+        <li><a href="#parse">ParseInt</a></li>
+        <li><a href="#alerprom">Alert e Prompt</a></li>
+      </ul>
+    </nav>
     <header id="main-head">
       <h2>
         Relembrando

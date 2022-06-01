@@ -9,7 +9,7 @@ html {
   -moz-scroll-behavior: smooth;
 }
 :target {
-  scroll-margin-top: 5rem;
+  /* scroll-margin-top: 1rem; */
 }
 
 body {
@@ -18,6 +18,10 @@ body {
 
 img {
   max-width:500px;
+}
+
+ul {
+  list-style: none;
 }
 
 /* ROOT */
@@ -46,8 +50,8 @@ img {
   right:0;
   bottom:0;
   margin:1rem;
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
   transition:.4s;
 }
 .a-top button {
@@ -128,6 +132,57 @@ img {
   height:20rem;
   overflow-y:auto;
 } */
+
+/* NAVIGATION */
+
+#nav {
+  position:fixed;
+  bottom:-10.2rem;
+  padding:1rem;
+  background:var(--black);
+  border-top-right-radius: .5rem;
+  transition:.3s;
+}
+
+#nav header {
+  color:var(--white);
+  position:relative;
+}
+#nav .title {
+  display:flex;
+  align-items: center;
+  gap:.5rem;
+}
+#nav .title img {
+  width:25px;
+}
+
+#nav .nav-up {
+  position:absolute;
+  top:-100%; left:20%;
+  transform:translateX(-50%);
+  background:var(--main-alt);
+  border-top-left-radius:.5rem;
+  border-top-right-radius:.5rem;
+  font-size:1.5rem;
+  transition:.3s;
+}
+#nav .nav-up.none {
+  opacity: 0;
+  visibility: hidden;
+  transition:.3s;
+}
+
+#nav .nav-close {
+  color:var(--white);
+  font-size:1.5rem;
+  position: absolute;
+  right:0;
+}
+
+#nav .point {
+  cursor: pointer;
+}
 
 /* MAIN HEADER */
 

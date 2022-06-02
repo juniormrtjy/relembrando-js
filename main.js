@@ -13,14 +13,17 @@
 {
   let nav = document.querySelector('#nav')
   let openMenu = document.querySelector('#nav .nav-up')
+  let bgMenu = document.querySelector('#nav .bg-close')
 
   function showMenu() {
     openMenu.classList.add('none')
     nav.style.bottom = '0'
+    bgMenu.style.visibility = 'visible'
   }
   function closeMenu() {
     openMenu.classList.remove('none')
-    nav.style.bottom = '-10.2rem'
+    nav.style.bottom = '-15.5rem'
+    bgMenu.style.visibility = 'hidden'
   }
 }
 

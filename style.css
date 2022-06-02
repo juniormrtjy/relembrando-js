@@ -1,119 +1,248 @@
-// COISAS EXTRA
+* {
+  margin:0; padding:0;
+  box-sizing: border-box;
+}
 
-{
-  let menuTopo = document.querySelector('#menu-top')
-  function onScroll() {
-    if (scrollY > 200) {
-      menuTopo.classList.add('a-none')
-    } else {
-      menuTopo.classList.remove('a-none')
-    }
+html {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+}
+:target {
+  /* scroll-margin-top: 1rem; */
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+img {
+  max-width:500px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ROOT */
+
+:root {
+  --hue:174;
+  --main:hsl(var(--hue) 54% 36%);
+  --medium:hsl(var(--hue) 50% 50%);
+  --light:hsl(var(--hue) 77% 78%);
+  --main-alt:hsl(var(--hue) 39% 25%);
+  --dark:hsl(0, 95%, 8%);
+  --black:hsl(0, 0%, 5%);
+  --white:white;
+  /* colors hex */
+  /* --1:hsl(174, 54%, 36%);
+  --2:hsl(174, 50%, 50%);
+  --3:#9cf2e9;
+  --4:hsl(169, 39%, 25%);
+  --5:hsl(0, 95%, 8%); */
+}
+
+/* BUTTON TO TOP */
+
+.a-top {
+  position:fixed;
+  right:0;
+  bottom:0;
+  margin:1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition:.4s;
+}
+.a-top button {
+  background:none;
+  border:none;
+  display:inline-flex;
+}
+.a-none {
+  opacity: 1;
+  visibility: visible;
+  transition:.4s;
+}
+
+/* LAYOUT */
+
+.header {
+  padding-block:1rem;
+}
+
+.content {
+  display:grid;
+  gap:1rem;
+}
+
+/* GRID COLUMNS */
+.one-column {
+  grid-template-columns: 1fr;
+}
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* PHARAGRAPH */
+.content p {
+  max-width:500px;
+  padding:.3rem;
+  background-color:var(--black);
+  color:var(--white);
+  border-radius:.2rem;
+  transition:.3s;
+}
+.content p:hover {
+  background-color:var(--dark);
+}
+/* ASIDE SPAN */
+.content aside span {
+  color:var(--main);
+}
+/* ~~ */
+
+.wrapper {
+  max-width:1000px;
+  margin-inline:auto;
+  padding-inline:1rem;
+}
+
+.divider {
+  height: 1px;
+  margin-block:1.5rem;
+  background:#ccc;
+}
+
+/* SCROLLBAR CUSTOM */
+
+/* .over::-webkit-scrollbar {
+  width:15px;
+}
+
+.over::-webkit-scrollbar-track {
+  background:var(--medium);
+}
+
+.over::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+}
+
+.over {
+  height:20rem;
+  overflow-y:auto;
+} */
+
+/* NAVIGATION */
+
+#nav {
+  position:fixed;
+  bottom:-10.2rem;
+  padding:1rem;
+  background:var(--black);
+  border-top-right-radius: .5rem;
+  transition:.3s;
+}
+
+#nav header {
+  color:var(--white);
+  position:relative;
+}
+#nav .title {
+  display:flex;
+  align-items: center;
+  gap:.5rem;
+}
+#nav .title img {
+  width:25px;
+}
+
+#nav .nav-up {
+  position:absolute;
+  top:-100%; left:20%;
+  transform:translateX(-50%);
+  background:var(--main-alt);
+  border-top-left-radius:.5rem;
+  border-top-right-radius:.5rem;
+  font-size:1.5rem;
+  transition:.3s;
+}
+#nav .nav-up.none {
+  opacity: 0;
+  visibility: hidden;
+  transition:.3s;
+}
+
+#nav .nav-close {
+  color:var(--white);
+  font-size:1.5rem;
+  position: absolute;
+  right:0;
+}
+
+#nav .point {
+  cursor: pointer;
+}
+
+/* MAIN HEADER */
+
+#main-head {
+  height:12.5rem;
+  line-height: 12.5rem;
+  text-align: center;
+  background:var(--main);
+}
+#main-head h2 {
+  font-size:3rem;
+  color:var(--white);
+}
+
+/* OPERADORES COMPARATIVOS */
+
+/* #opcomp .content p {
+  max-width:500px;
+  padding:.3rem;
+  background-color:var(--black);
+  color:var(--white);
+  border-radius:.2rem;
+  transition:.3s;
+}
+#opcomp .content p:hover {
+  background-color:var(--dark);
+} */
+
+
+/* MEDIA QUERIES */
+
+@media (max-width:786px) {
+  .wrapper {
+    padding-inline:.5rem;
+  }
+  img {
+    width: 100%;
+  }
+
+  .content {
+    justify-items: center;
+  }
+  .content p {
+    width:90vw;
+  }
+  .two-columns {
+    grid-template-columns: 1fr;
   }
 }
-{
-  let nav = document.querySelector('#nav')
-  let openMenu = document.querySelector('#nav .nav-up')
 
-  function showMenu() {
-    openMenu.classList.add('none')
-    nav.style.bottom = '0'
+@media (max-width:385px) {
+  #main-head {
+  width:100%;
+  line-height: 1;
+  padding-inline: 1rem;
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
+}
+  #main-head h2 {
+    font-size:2rem;
   }
-  function closeMenu() {
-    openMenu.classList.remove('none')
-    nav.style.bottom = '-10.2rem'
-  }
-}
-
-// =============== OPERADORES COMPARATIVOS
-
-var opcomp = document.querySelector('#opcomp .content aside')
-
-opcomp.innerHTML +=
-  '<p> 5 === "5"' + '. Essa comparação é: ' + (5 === '5') + '</p>' + '<br>'
-opcomp.innerHTML +=
-  '<p> 5 == "5"' + '. Essa comparação é: ' + (5 == '5') + '</p>' + '<br>'
-opcomp.innerHTML +=
-  '<p> 6 != "6"' + '. Essa comparação é: ' + (6 != '6') + '</p>' + '<br>'
-opcomp.innerHTML +=
-  '<p> 6 !== "6"' + '. Essa comparação é: ' + (6 !== '6') + '</p>' + '<br>'
-opcomp.innerHTML +=
-  '<p> 10 > 5?' + '. Essa comparação é: ' + (10 > 5) + '</p>' + '<br>'
-opcomp.innerHTML +=
-  '<p> 10 < 5?' + '. Essa comparação é: ' + (10 < 5) + '</p>' + '<br>'
-opcomp.innerHTML +=
-  '<p> 10 <= 10?' + '. Essa comparação é: ' + (10 <= 10) + '</p>' + '<br>'
-
-// =============== OPERADORES LÓGICOS
-
-{
-  let dom = document.querySelector('#oplog .content aside')
-  let idade = 20
-  let maior20 = idade >= 20
-  let menor30 = idade <= 30
-  let entre = maior20 && menor30
-
-  dom.innerHTML +=
-    '<p> <span>let</span> idade = ' +
-    idade +
-    ' ~~ <span>let</span> maior20 = idade >= 20; ~~ <span>let</span> menor30 = idade <= 30; ~~ <span>let</span> entre = maior20 && menor30 </p>' +
-    '<br>'
-  dom.innerHTML +=
-    '<p>Se a idade for maior que 20: ' + maior20 + '</p>' + '<br>'
-  dom.innerHTML +=
-    '<p>Se a idade for menor que 30: ' + menor30 + '</p>' + '<br>'
-
-  dom.innerHTML +=
-    '<p>Se a idade estiver entre 20 e 30: ' + entre + '</p>' + '<br>'
-}
-{
-  // EXEMPLO DA GRATUIDADE
-  let dom = document.querySelector('#oplog .content .a-2')
-  let idade = 9
-  let menor10 = idade <= 10
-  let maior65 = idade >= 65
-  let gratuidade = menor10 || maior65
-
-  dom.innerHTML +=
-    '<p>Se a pessoa tiver 10 anos ou menos, terá direito a gratuidade. Se tiver 65 anos ou mais, também terá direito a gratuidade. <br> <span>let</span> gratuidade = menor10 || maior65; <span>let</span> idade = ' +
-    idade +
-    '; </p> <br>'
-  dom.innerHTML += '<p> Você tem direito a gratuidade? ' + gratuidade + '</p>'
-}
-{
-  // NEGAÇÃO
-  let dom = document.querySelector('#oplog .content .a-3')
-  let idade = 19
-  let maior20 = idade >= 20
-  let menor20 = !maior20 // ! indica a negação
-
-  dom.innerHTML +=
-    '<p>Imprimindo a variável "maior20": ' + maior20 + '</p> <br>'
-  dom.innerHTML +=
-    '<p>Imprimindo a variável "menor20": ' + menor20 + '</p> <br>'
-}
-
-// =============== PARSETINT
-
-{
-  let dom = document.querySelector('#parse .content aside')
-  let num1 = '2'
-  let num2 = '5.5'
-
-  dom.innerHTML +=
-    '<p>O <span>parseInt</span> transforma strings em números inteiros. O <span>parseFloat</span> transforma as strings em números com decimais. Número 1: ' +
-    num1 +
-    ' e Número 2: ' +
-    num2 +
-    '. Usando o <span>ParseInt</span> para somar os 2: ' +
-    '<span>' +
-    (parseInt(num1) + parseFloat(num2)) +
-    '</span></p>'
-}
-
-// =============== ALERT E PROMPT
-
-{
-  let dom = document.querySelector('#alerprom .content aside')
-  dom.innerHTML +=
-    '<p>Não irei usar o prompt porque é irritante. Mas ele recebe um valor e armazena em string. Na imagem 2, mostra como usar o prompt para receber e armazenar um número da maneira correta.'
 }

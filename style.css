@@ -8,9 +8,6 @@ html {
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
 }
-:target {
-  /* scroll-margin-top: 1rem; */
-}
 
 body {
   font-family: 'Kanit', sans-serif;
@@ -22,6 +19,10 @@ img {
 
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* ROOT */
@@ -135,9 +136,21 @@ ul {
 
 /* NAVIGATION */
 
+#nav .bg-close {
+  content: '';
+  position:fixed;
+  top:0; left:0;
+  z-index: 1;
+  width:100vw; height:100vh;
+  background:var(--black);
+  opacity: 0;
+  visibility: hidden;
+}
+
 #nav {
   position:fixed;
-  bottom:-10.2rem;
+  bottom:-15.5rem;
+  z-index: 10;
   padding:1rem;
   background:var(--black);
   border-top-right-radius: .5rem;
@@ -147,6 +160,7 @@ ul {
 #nav header {
   color:var(--white);
   position:relative;
+  z-index: 10;
 }
 #nav .title {
   display:flex;
@@ -181,6 +195,24 @@ ul {
 
 #nav .point {
   cursor: pointer;
+}
+
+#nav .menu {
+  margin-top:1rem;
+  position:relative;
+  z-index: 10;
+}
+
+#nav .menu a {
+  display:block;
+  padding:.52rem;
+  font-weight: 600;
+  letter-spacing: .03rem;
+  color:var(--main);
+  border-radius:.5rem;
+}
+#nav .menu a:hover {
+  background:#222222;
 }
 
 /* MAIN HEADER */

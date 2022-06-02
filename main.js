@@ -10,6 +10,19 @@
     }
   }
 }
+{
+  let nav = document.querySelector('#nav')
+  let openMenu = document.querySelector('#nav .nav-up')
+
+  function showMenu() {
+    openMenu.classList.add('none')
+    nav.style.bottom = '0'
+  }
+  function closeMenu() {
+    openMenu.classList.remove('none')
+    nav.style.bottom = '-10.2rem'
+  }
+}
 
 // =============== OPERADORES COMPARATIVOS
 
